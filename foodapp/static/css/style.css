@@ -1,0 +1,48 @@
+
+    body{
+      background:#f2f2f2;
+    }
+    h1 {
+      color: red;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    h2 {
+      color: magenta;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    h3 {
+      color: rgb(7, 5, 155);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    h4 {
+      color: rgb(183, 255, 0);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    h5 {
+      color: rgb(5, 178, 221);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .nav-item.nav-link active {
+      color: red;
+      font-size: 16px;
+    }
+
+    .nav-link active {
+      color: blue;
+      background-color: blueviolet;
+    }
+
+    .canvas#myChart {
+      width: 50vhx;
+    }
+ 

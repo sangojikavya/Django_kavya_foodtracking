@@ -1,0 +1,11 @@
+body{
+    background: #b3ffb3;
+  }
+  h1 {
+    color: red;
+    text-align: center;
+    cursor: pointer;
+  }
+  .carousel-inner{
+    position: center;
+  }
