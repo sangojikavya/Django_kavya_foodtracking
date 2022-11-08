@@ -47,11 +47,11 @@ https://templatemo.com/tm-562-space-dynamic
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="{% url 'homepage' %}">Home</a></li>
-              <li class="scroll-to-section"><a href="{% url 'about' %}">About Us</a></li>
+              <li class="scroll-to-section"><a href="#about">About Us</a></li>
               <li class="scroll-to-section"><a href="{% url 'login' %}">Login</a></li>
               <li class="scroll-to-section"><a href="{% url 'register' %}">Register User</a></li>
               
-              <li class="scroll-to-section"><div class="main-red-button"><a href="{% url 'contact' %}">Contact Now</a></div></li> 
+              <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Contact Now</a></div></li> 
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>
@@ -62,45 +62,56 @@ https://templatemo.com/tm-562-space-dynamic
       </div>
     </div>
   </header>
-  <!-- ***** Header Area End ***** -->
   <br><br><br><br><br>
-  <h1>Welcome To homepage</h1>
-    <br>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{% static 'images/Food1.jpg' %}" class="d-block h-100 w-100" alt="Loading">
+  <!-- ***** Header Area End ***** -->
+<div class="container">
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+        <div class="col-sm-5">
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name :-</label>
+            <input type="text" class="form-control" id="exampleInputname" aria-describedby="emailHelp" required="fill"
+                placeholder="Enter the Name" name="name">
+
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address :-</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                required="fill" name="email">
+
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone :-</label>
+            <input type="text" class="form-control" id="exampleInputphone" aria-describedby="emailHelp" required="fill"
+                name="phone">
+
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Message :-</label>
+            <textarea class="form-control" id="exampleInputSummary" aria-describedby="emailHelp" required="fill"
+                name="message"></textarea>
+
+            </div>
+            <fieldset>
+            <button type="submit" id="form-submit" class="main-button ">Send Message Now</button>
+            </fieldset>
         </div>
-        <div class="carousel-item">
-          <img src="{% static 'images/food2.jpg' %}" class="d-block h-100 w-100" alt="...">
+        <div class="col-sm-7">
+            <br>
+            <div class="card" style="width: 90 rem;">
+            <div class="card-body">
+                <h5 class="card-title">Food Track</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Make a your choice </h6>
+                <p class="card-text"></p>
+                <a href="{% url 'login' %}" class="btn btn-success"> Click Here Foodtrack</a>
+            </div>
+            </div>
         </div>
-        <div class="carousel-item">
-          <img src="{% static 'images/food3.jpg' %}" class="d-block h-100 w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  <p >Emphasizes fruits, vegetables, whole grains, and fat-free or low-fat milk and milk products. 
-    Includes a variety of protein foods such as seafood, lean meats and poultry, eggs, legumes (beans and peas), soy products, nuts, and seeds. 
-    Is low in added sugars, sodium, saturated fats, trans fats, and cholesterol.</p>
-    
+        </div> <!-- form-group// -->
+    </form>
+</div> 
 <!-- Scripts -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

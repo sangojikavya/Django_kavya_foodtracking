@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Food,Consume
+from .models import Food,Consume,Contact
 from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required 
 
@@ -74,11 +74,23 @@ def Userlogin(request):
         newuser=auth.authenticate(username=vuname,password=vpasswd)
         if newuser is not None:
             auth.login(request,newuser)
-            return redirect('/')
+            return redirect('/home')
         else:
             return render(request,'register.html')
 
 @login_required(login_url='login')
 def Userlogout(request):
     auth.logout(request)
-    return render(request,'login.html')             
+    return render(request,'login.html') 
+            
+def contact(request):
+    if request.method=='POST':
+        vname=request.POST.get('name')
+        vemail=request.POST.get('email')
+        vphone=request.POST.get('phone')
+        vmessage=request.POST.get('message')
+        details=Contact(name=vname,email=vemail,phone=vphone,message=vmessage)
+        details.save()
+    return render(request,'contact.html')
+def about(request):
+    return render(request,'about.html')

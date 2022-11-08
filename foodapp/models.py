@@ -17,3 +17,9 @@ class Consume(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     #def __str__(self):
         #return self.food_consume
+        
+class Contact(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    phone=models.CharField(max_length=100)
+    message=models.TextField(max_length=400)
